@@ -244,8 +244,8 @@ void SDLWindow::demo(){
 	/***********************************************/
 	/******* DEMO RESOURCES - READ IMAGES... *******/
 	/***********************************************/
-	Texture sonicTex=window.readFile("sonic-rains.png");
-	Texture sonicTexFixed=window.readFile("sonic-rains.png");
+	Texture spriteTex=window.readFile("sprite.png");
+	Texture spriteTexFixed=window.readFile("sprite.png");
 
 	/***********************************************/
 	/************ START THE GAME LOOP... ***********/
@@ -406,26 +406,26 @@ void SDLWindow::demo(){
 		/*****************************************/
 		//Attention!!! You must put an image on the folder to load it later and render it...
 		/***********************************/
-		/*** RENDER SONIC 1 ON SCREEN... ***/
+		/*** RENDER SPRITE1 ON SCREEN... ***/
 		/***********************************/
-		static SDLPoint sonicPos={
-			(int)round(window.getCenter().x-SDLWindow::getTextureSize(sonicTex).x*0.5f),
-			(int)round(window.getCenter().y-clockRadius-SDLWindow::getTextureSize(sonicTex).y-20)
+		static SDLPoint spritePos={
+			(int)round(window.getCenter().x-SDLWindow::getTextureSize(spriteTex).x*0.5f),
+			(int)round(window.getCenter().y-clockRadius-SDLWindow::getTextureSize(spriteTex).y-20)
 		};
-		if(sonicTex){//Texture was created successfuly...
-			if(window.keyDown(SDLKey::O))sonicPos.x--;
-			if(window.keyDown(SDLKey::P))sonicPos.x++;
-			if(window.keyDown(SDLKey::Q))sonicPos.y--;
-			if(window.keyDown(SDLKey::A))sonicPos.y++;
-			window.renderTexture(sonicTex,sonicPos.x,sonicPos.y,255,0);
+		if(spriteTex){//Texture was created successfuly...
+			if(window.keyDown(SDLKey::O))spritePos.x--;
+			if(window.keyDown(SDLKey::P))spritePos.x++;
+			if(window.keyDown(SDLKey::Q))spritePos.y--;
+			if(window.keyDown(SDLKey::A))spritePos.y++;
+			window.renderTexture(spriteTex,spritePos.x,spritePos.y,255,0);
 		}
 		/***********************************/
-		/*** RENDER SONIC 2 ON SCREEN... ***/
+		/*** RENDER SPRITE2 ON SCREEN... ***/
 		/***********************************/
 		window.renderTexture(
-			sonicTexFixed,
-			window.getCenter().x-SDLWindow::getTextureSize(sonicTex).x*0.5/*x*/,
-			window.getCenter().y-clockRadius-SDLWindow::getTextureSize(sonicTex).y-20/*y*/,
+			spriteTexFixed,
+			window.getCenter().x-SDLWindow::getTextureSize(spriteTex).x*0.5/*x*/,
+			window.getCenter().y-clockRadius-SDLWindow::getTextureSize(spriteTex).y-20/*y*/,
 			255,0
 		);
 
@@ -489,8 +489,8 @@ void SDLWindow::demo(){
 	/***********************************************/
 	/************ DESTROY THE TEXTURES... **********/
 	/***********************************************/
-	if(sonicTex)window.destroyTexture(sonicTex);
-	if(sonicTexFixed)window.destroyTexture(sonicTex);
+	if(spriteTex)window.destroyTexture(spriteTex);
+	if(spriteTexFixed)window.destroyTexture(spriteTex);
 }
 
 /***********************************************/
