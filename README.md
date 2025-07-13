@@ -18,6 +18,10 @@ int main(int argc,char** argv){
 }
 ```
 
+## 📸 Screenshot
+
+![Preview of MiniGFX](screenshot.png)
+
 ---
 
 Author: Gonçalo Ferreira  
